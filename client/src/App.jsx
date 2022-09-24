@@ -8,12 +8,13 @@ import "./app.scss";
 import SelectFilter from "./components/SelectFilter/SelectFilter";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [tableData, setTableData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedSortField, setSelectedSortField] = useState("");
   const [selectedSortValue, setSelectedSortValue] = useState("");
   const [input, setInput] = useState("");
+  // Константы для пагинации
+  const [currentPage, setCurrentPage] = useState(1);
   const itemPerPage = 10;
   const lastItemIndex = currentPage * itemPerPage;
   const firstItemIndex = lastItemIndex - itemPerPage;
@@ -36,6 +37,9 @@ function App() {
     setSelectedSortValue(sort);
   };
 
+  // Филбтрация данных с селекта. Получилось коряво, 60% времени на это потратил, но как есть)
+  // Так же не понял, как можно сделать фильтрацию "большеб меньше для колонки Название", поэтому сделал для следующей колонки "Колличесво", получяется
+  // залдублтровал этот пункт
   const filteredlValue = currentItem.filter((item) => {
     if (selectedSortField === "name") {
       if (selectedSortValue === "equal") {
@@ -106,7 +110,6 @@ function App() {
         ) : (
           <table className="table table-bordered">
             <TableHead />
-
             <TableBody filteredlValue={filteredlValue} />
           </table>
         )}

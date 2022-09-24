@@ -9,3 +9,6 @@
 ### `npm start`
 
 # Необходимо создать .env с настройками конфига для бекенда
+
+# Использованы react, node Js (express js)
+# Стили styled components, scss, bootstrap 4. Избыточно, но для того что бы показать что могу
