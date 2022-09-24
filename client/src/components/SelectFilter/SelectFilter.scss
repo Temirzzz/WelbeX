@@ -1,0 +1,48 @@
+.select-filter {
+  &__search {
+    position: relative;
+    width: 630px;
+    margin: 20px 0 15px;
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      font-size: 14px;
+      margin: 10px 0 10px;
+    }
+
+    input {
+      height: 50px;
+      @media screen and (max-width: 800px) {
+        height: 45px;
+      }
+    }
+
+    input,
+    input:focus {
+      background: #5a5c66;
+      color: #fff;
+      outline: none;
+      border-color: unset;
+      box-shadow: none;
+    }
+  }
+
+  &__select {
+    width: 305px;
+    height: 50px;
+    padding: 10px;
+    background: #5a5c66;
+    color: #fff;
+    border-color: unset;
+    box-shadow: none;
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      height: 45px;
+      font-size: 14px;
+      margin-right: 0;
+    }
+  }
+}
